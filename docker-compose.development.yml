@@ -29,7 +29,6 @@ services:
       - redis
     environment:
       NODE_ENV: development
-      ECOSYS: docker
     volumes:
       - .:/web_app
       - venv:/web_app/node_modules
