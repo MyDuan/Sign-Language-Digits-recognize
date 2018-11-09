@@ -31,8 +31,9 @@ services:
       - ./docker/data/redis/:/data
   app:
     build: .
+    hostname: app
     ports:
-      - "8080:3000"
+      - "3000:3000"
     links:
       - db
       - redis
