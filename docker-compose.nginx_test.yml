@@ -4,14 +4,21 @@ volumes:
     driver: local
 services:
   nginx:
-    image: nginx:alpine
-    container_name: nginx
-    ports:
-      - "80:80"
-    volumes:
-      - "./conf.d:/etc/nginx/conf.d"
-    links:
-      - app
+    nginx:
+      build: ./nginx
+      container_name: nginx
+      ports:
+        - "80:80"
+        - "443:443"
+      environment:
+        SERVER_NAME: localhost
+        HOST_NAME: localhost
+        DEVELOPMENT: "true"
+      volumes:
+        - "./nginx/conf.d:/etc/nginx/conf.d"
+        - "./nginx/ssl:/etc/nginx/ssl"
+      links:
+        - app
   db:
     image: mysql:5.7
     ports:
