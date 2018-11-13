@@ -11,6 +11,7 @@ And also I use EntryKit to render different .conf file in order to different env
 ### Step to use
 
 - Install the docker (I use docker for mac)
-- export COMPOSE_FILE=docker-compose.nginx_test.yml (you can set it in order to you need.)
+- export COMPOSE_FILE=docker-compose.nginx_test.yml (That means you docker-compose will use "docker-compose.nginx_test.yml"
+you can set it according to yourself.)
 - docker-compose up
 - https://localhost
