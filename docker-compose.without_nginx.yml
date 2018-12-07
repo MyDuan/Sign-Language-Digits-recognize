@@ -41,3 +41,11 @@ services:
     volumes:
       - .:/web_app
       - venv:/web_app/node_modules
+
+networks:
+  app_net:
+    driver: bridge
+    ipam:
+     driver: default
+     config:
+       - subnet: 172.30.0.0/24
