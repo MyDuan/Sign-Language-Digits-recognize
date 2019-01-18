@@ -15,6 +15,9 @@ And also I use EntryKit to render different .conf file in order to different env
 you can set it according to yourself.)
 - docker-compose up
 - https://localhost
+- note: when use the COMPOSE_FILE=docker-compose.without_nginx.yml, the url will be
+  - http://localhost:8080/
+  - networks and hard coding IP was used.
 
 ### about atom
 - install the terminal in atom
