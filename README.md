@@ -15,3 +15,7 @@ And also I use EntryKit to render different .conf file in order to different env
 you can set it according to yourself.)
 - docker-compose up
 - https://localhost
+
+### about atom
+- install the terminal in atom
+- use `atom -a <path>` to add floder to Atom.
