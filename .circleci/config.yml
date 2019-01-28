@@ -1,13 +1,11 @@
 version: 2.1
-jobs:
-  empty-test:
-    steps:
-      - checkout
-      - run:
-          name: Run empty test.
+executors:
+  my-executor:
+    docker:
+      - image: circleci/ruby:2.5.1-node-browsers
 
-workflows:
-  version: 2
-  test:
-    jobs:
-      - empty-test
+jobs:
+  my-job:
+    executor: my-executor
+    steps:
+      - run: echo outside the executor
