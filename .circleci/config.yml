@@ -21,3 +21,9 @@ jobs:
       - run:
           name: start test
           command: npm test
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
