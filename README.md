@@ -22,3 +22,7 @@ you can set it according to yourself.)
 ### about atom
 - install the terminal in atom
 - use `atom -a <path>` to add floder to Atom.
+
+### circleci
+
+- use version 2 to run an empty test
