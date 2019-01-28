@@ -5,7 +5,6 @@ jobs:
       - checkout
       - run:
           name: Run empty test.
-          command: echo "Run empty test."
 
 workflows:
   version: 2
