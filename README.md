@@ -25,4 +25,16 @@ you can set it according to yourself.)
 
 ### circleci
 
-- use version 2 to run an empty test
+- install Jtest `npm install --save-dev jest`
+- Add test in /test
+- run `npm test`
+  ```
+  PASS  test/first.test.js
+
+  ✓ adds 1 + 2 to equal 3 (3ms)
+
+  Test Suites: 1 passed, 1 total
+  Tests:       1 passed, 1 total
+  Snapshots:   0 total
+  Time:        6.21s
+  ```
