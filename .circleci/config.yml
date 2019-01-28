@@ -1,0 +1,14 @@
+version: 2.1
+jobs:
+  empty-test:
+    steps:
+      - checkout
+      - run:
+          name: Run empty test.
+          command: echo "Run empty test."
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - empty-test
