@@ -8,5 +8,11 @@ jobs:
     steps:
       - checkout
       - run:
-          name: test
-          command: 'echo empty test again'
+          name: start
+          command: 'echo start test'
+      - run:
+          name: install npm
+          command: npm install --save-dev jest
+      - run:
+          name: start test
+          command: npm test
