@@ -7,12 +7,17 @@ jobs:
       - image: circleci/node:10.9.0
     steps:
       - checkout
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
       - run:
           name: start
           command: 'echo start test'
       - run:
           name: install npm
-          command: npm install --save-dev jest
+          command: npm install
       - run:
           name: start test
           command: npm test
