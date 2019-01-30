@@ -18,6 +18,10 @@ jobs:
       - run:
           name: install npm
           command: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
       - run:
           name: start test
           command: npm test
