@@ -25,7 +25,12 @@ jobs:
       - run:
           name: start test
           command: npm test
-      - deploy:
+  deploy_if_master:
+    machine: true
+    working_directory: ~/web_app
+    steps:
+      - checkout
+      - run:
           name: Start master deploy
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
@@ -37,3 +42,4 @@ workflows:
   build-deploy:
     jobs:
       - build
+      - deploy_if_master
