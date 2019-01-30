@@ -24,7 +24,12 @@ you can set it according to yourself.)
 - use `atom -a <path>` to add floder to Atom.
 
 ### circleci
-
+- local circle CI
+    - `curl -o /usr/local/bin/circleci https://circle-downloads.s3.amazonaws.com/releases/build_agent_wrapper/circleci && chmod +x /usr/local/bin/circleci`
+    - `circleci update`
+    - `circleci config validate -c .circleci/config.yml`
+    - `circleci build .circleci/config.yml`
+    
 - install Jtest `npm install --save-dev jest`
 - Add test in /test
 - run `npm test`
