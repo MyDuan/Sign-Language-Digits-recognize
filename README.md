@@ -29,7 +29,8 @@ you can set it according to yourself.)
     - `circleci update`
     - `circleci config validate -c .circleci/config.yml`
     - `circleci build .circleci/config.yml`
-    
+- Also send the noti to slack.
+
 - install Jtest `npm install --save-dev jest`
 - Add test in /test
 - run `npm test`
