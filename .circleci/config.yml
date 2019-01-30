@@ -43,3 +43,5 @@ workflows:
     jobs:
       - build
       - deploy_if_master
+         requires:
+            - build
