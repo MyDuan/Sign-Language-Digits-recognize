@@ -25,6 +25,12 @@ jobs:
       - run:
           name: start test
           command: npm test
+      - deploy:
+          name: Start master deploy
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+                echo deploy master
+            fi
 
 workflows:
   version: 2
