@@ -46,5 +46,5 @@ workflows:
          requires:
             - build_and_test
          filters:
-           banches:
+           branches:
             only: master
