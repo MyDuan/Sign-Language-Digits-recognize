@@ -1,7 +1,7 @@
 version: 2
 
 jobs:
-  build:
+  build_and_test:
     working_directory: ~/web_app
     docker:
       - image: circleci/node:10.9.0
@@ -13,19 +13,19 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-web_app-
       - run:
-          name: start
-          command: 'echo start test'
+          name: Start
+          command: 'echo start build and test'
       - run:
-          name: install npm
+          name: Build
           command: npm install
       - save_cache:
           paths:
             - node_modules
           key: v1-web_app-{{ checksum "package.json" }}
       - run:
-          name: start test
+          name: Start test
           command: npm test
-  deploy_if_master:
+  deploy_if_on_master:
     machine: true
     working_directory: ~/web_app
     steps:
@@ -41,7 +41,7 @@ workflows:
   version: 2
   build-deploy:
     jobs:
-      - build
+      - build_and_test
       - deploy_if_master:
          requires:
-            - build
+            - build_and_test
