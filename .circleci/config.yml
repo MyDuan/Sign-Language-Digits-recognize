@@ -28,6 +28,9 @@ jobs:
   deploy_if_on_master:
     machine: true
     working_directory: ~/web_app
+    filter:
+      banches:
+        only: master
     steps:
       - checkout
       - run:
