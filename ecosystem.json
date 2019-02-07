@@ -5,6 +5,7 @@
    }],
    "deploy" : {
      "production" : {
+       "key"  : "~/.ssh/id_rsa",
        "user" : "duanyu",
        "host" : [
            {
