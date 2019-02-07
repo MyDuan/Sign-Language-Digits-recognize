@@ -1,6 +1,6 @@
 {
    "apps" : [{
-      "name" : "super.duan",
+      "name" : "web_app",
       "script" : "./bin/www",
    }],
    "deploy" : {
@@ -21,6 +21,25 @@
        "env"  : {
          "NODE_ENV": "production",
          "PORT": "3000"
+       }
+     },
+     "staging" : {
+       "key"  : "~/.ssh/id_rsa",
+       "user" : "duanyu",
+       "host" : [
+           {
+             host:"118.27.14.11",
+             port: "4022"
+           }
+         ],
+       "ref"  : "origin/develop",
+       "repo" : "git@github.com:MyDuan/web_app.git",
+       "path" : "/var/www/staging",
+       "ssh_options": "StrictHostKeyChecking=no",
+       "post-deploy" : "npm install && pm2 startOrRestart ecosystem.json --env production",
+       "env"  : {
+         "NODE_ENV": "staging",
+         "PORT": "3100"
        }
       }
    }
