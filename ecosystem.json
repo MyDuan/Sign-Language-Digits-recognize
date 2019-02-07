@@ -1,0 +1,25 @@
+{
+   "apps" : [{
+      "name" : "super.duan",
+      "script" : "./bin/www",
+   }],
+   "deploy" : {
+     "production" : {
+       "user" : "duanyu",
+       "host" : [
+           {
+             host:"118.27.14.11",
+             port: "4022"
+           }
+         ],
+       "ref"  : "origin/master",
+       "repo" : "git@github.com:MyDuan/web_app.git",
+       "path" : "/var/www/production",
+       "post-deploy" : "npm install && pm2 startOrRestart ecosystem.json --env production",
+       "env"  : {
+         "NODE_ENV": "production",
+         "PORT": "3000"
+       }
+      }
+   }
+}
