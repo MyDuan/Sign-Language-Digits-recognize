@@ -24,7 +24,7 @@
        }
      },
      "staging" : {
-       "key"  : "~/.ssh/id_rsa",
+       "key"  : "/home/duanyu/.ssh/id_rsa",
        "user" : "duanyu",
        "host" : [
            {
