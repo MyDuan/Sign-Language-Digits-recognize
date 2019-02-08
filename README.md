@@ -44,3 +44,7 @@ you can set it according to yourself.)
   Snapshots:   0 total
   Time:        6.21s
   ```
+
+### pm2 deploy
+- `pm2 deploy ecosystem.json produnction.`
+- use circleci to deploy via pm2 automatically
