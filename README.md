@@ -48,3 +48,4 @@ you can set it according to yourself.)
 ### pm2 deploy
 - `pm2 deploy ecosystem.json produnction.`
 - use circleci to deploy via pm2 automatically
+- URL: http://118.27.14.11/
