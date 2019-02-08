@@ -35,7 +35,7 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
                 echo deploy master;
-                ssh $SSH_USER@$SSH_HOST "pm2 deploy ecosystem.json production"
+                ssh -p $SSH_PORT $SSH_USER@$SSH_HOST "pm2 deploy ecosystem.json production"
             fi
 
 workflows:
