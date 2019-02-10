@@ -39,6 +39,12 @@ jobs:
                 pm2 deploy ecosystem.json production
                 curl -X POST --data-urlencode "payload={\"username\": \"circleCI\",\"text\": \"deploy master branch\", \"icon_emoji\": \":ghost:\" }" "${SLACK_WEB_HOOK}"
             fi
+            
+experimental:
+  notify:
+    branches:
+      only:
+        - master
 
 workflows:
   version: 2
