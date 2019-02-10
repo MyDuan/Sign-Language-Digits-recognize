@@ -36,7 +36,7 @@ jobs:
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
                 echo deploy master;
                 npm install pm2 -g;
-                pm2 deploy ecosystem.json production"
+                pm2 deploy ecosystem.json production
             fi
 
 workflows:
