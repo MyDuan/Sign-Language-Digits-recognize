@@ -6,26 +6,38 @@ const IMAGES_PATH = __dirname + '/../public/static/Example/';
 var fs = require('fs');
 var Canvas = require('canvas'),
     Image = Canvas.Image;
-
-fs.readdir(IMAGES_PATH, async (err, filenames) => {
-  await loadModel()
-  filenames.forEach(function(filename) {
-    fs.readFile(IMAGES_PATH+filename, async (err, data) => {
+var results = []
+var copiedresults = JSON.parse(JSON.stringify(results));
+module.exports = {
+  getResult: async (numlist) => {
+    results = [];
+    var count = 0;
+    for(let num of numlist){
+      let data_
+      fs.readFile(IMAGES_PATH+'example_'+num+'.JPG', function(err, data) {
+         data_ = data
+      });
+      let model = await loadModel();
       var img = new Image;
-      img.src = data;
+      img.src = await data_;
       var canvas = Canvas.createCanvas(img.width, img.height);
       var context = canvas.getContext('2d');
       context.drawImage(img, 0, 0, img.width, img.height);
-      await predict(canvas, filename);
-    });
-  });
-});
+      let result = await predict(canvas, IMAGES_PATH+'example_'+num+'.JPG');
+      results[count] =  await result;
+      count += 1;
+    };
+  },
+  returnResult: function(){
+    return results;
+  }
+}
 
 // load the trained model:
 let model;
 async function loadModel() {
 	console.log("model loading..");
-	model=await tf.loadModel('file://'+__dirname + '/../public/static/model.json');
+	model=await tf.loadModel('file://'+__dirname + '/../public/static/signLanguageDigits/model.json');
 	console.log("model loaded.");
 };
 
@@ -46,7 +58,7 @@ async function predict(image, filename){
 	results.forEach(function(p){
 		console.log('The number in' + filename + 'is: ' + p.className)
 	});
-
+  return results[0].className;
 };
 
 // image to tensor
