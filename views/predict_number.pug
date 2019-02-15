@@ -2,3 +2,10 @@ extends layout
 
 block content
   h1= title
+  form(method='post', action='/predict_number')
+    - for (var i = 0; i < 10; i++)
+      img(src='/static/Example/example_'+i+'.JPG')
+      input.checkbox(id="numlist", type='checkbox', name="numlist", value=i)
+    hr
+    button.submit(type='submit') submit
+  p The number in example_0.JPG is: #{result}

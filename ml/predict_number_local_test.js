@@ -6,23 +6,20 @@ const IMAGES_PATH = __dirname + '/../public/static/Example/';
 var fs = require('fs');
 var Canvas = require('canvas'),
     Image = Canvas.Image;
-var results = {number:[]}
-var copiedresults = JSON.parse(JSON.stringify(results));
-module.exports = {
-  getResult: async function (numlist) {
-    await loadModel()
-    numlist.forEach(function(num, i) {
-      fs.readFile(IMAGES_PATH+'example_'+num+'.JPG', async function (err, data) {
-        var img = new Image;
-        img.src = data;
-        var canvas = Canvas.createCanvas(img.width, img.height);
-        var context = canvas.getContext('2d');
-        context.drawImage(img, 0, 0, img.width, img.height);
-        await predict(canvas, IMAGES_PATH+'example_'+num+'.JPG');
-      });
+
+fs.readdir(IMAGES_PATH, async (err, filenames) => {
+  await loadModel()
+  filenames.forEach(function(filename) {
+    fs.readFile(IMAGES_PATH+filename, async (err, data) => {
+      var img = new Image;
+      img.src = data;
+      var canvas = Canvas.createCanvas(img.width, img.height);
+      var context = canvas.getContext('2d');
+      context.drawImage(img, 0, 0, img.width, img.height);
+      await predict(canvas, filename);
     });
-  }
-}
+  });
+});
 
 // load the trained model:
 let model;
