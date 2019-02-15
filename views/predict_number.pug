@@ -8,4 +8,6 @@ block content
       input.checkbox(id="numlist", type='checkbox', name="numlist", value=i)
     hr
     button.submit(type='submit') submit
-  p The number in example_0.JPG is: #{result}
+  - if(result)
+    - for (var i = 0; i < result.length; i++)
+       p The number in example_#{numlist[i]}.JPG is: #{result[i]}
