@@ -25,7 +25,7 @@ fs.readdir(IMAGES_PATH, async (err, filenames) => {
 let model;
 async function loadModel() {
 	console.log("model loading..");
-	model=await tf.loadModel('file://'+__dirname + '/../public/static/model.json');
+	model=await tf.loadModel('file://'+__dirname + '/../public/static/signLanguageDigits/model.json');
 	console.log("model loaded.");
 };
 
