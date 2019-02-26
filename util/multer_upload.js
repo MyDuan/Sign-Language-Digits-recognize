@@ -1,4 +1,5 @@
 var multer = require('multer');
+var jimp = require('jimp');
 var mime = require('mime');
 var util = require("./util");
 var path = require('path');
@@ -29,5 +30,21 @@ module.exports = {
       }
       return cb(new Error('Invalid data type'), false);
     }
-  }).single('background')
+  }).single('background'),
+
+  Jimp : function(path, size){
+    jimp.read(path)
+      .then(photo => {
+          if(photo.getWidth() > size.w || photo.getHeight() > size.h){
+            photo
+              .scaleToFit(size.w, size.h)
+              .quality(60)
+              .write(path);
+          }
+          return photo;
+      })
+      .catch(err => {
+          console.error(err);
+    });
+  }
 }

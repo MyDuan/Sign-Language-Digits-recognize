@@ -5,12 +5,13 @@ block content
   form(method='post', action='/predict_upload_picture' enctype="multipart/form-data")
     div
       label テスト画像 / test image
-      if ture
-        img(src="/")
       div.filebox
-        if ture
+        if !image_url
           input.checkValue.box(type='file', name='background', required)
         else
           input.checkValue.box(type='file', name='background')
     hr
     button.submit(type='submit') submit
+  div
+    if image_url
+      img(src="/"+image_url)  
