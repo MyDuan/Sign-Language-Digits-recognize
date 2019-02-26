@@ -3,6 +3,7 @@
 const tf = require('@tensorflow/tfjs-node');
 const CLASSES = {0:'zero', 1:'one', 2:'two', 3:'three', 4:'four',5:'five', 6:'six', 7:'seven', 8:'eight', 9:'nine'};
 const IMAGES_PATH = __dirname + '/../public/static/Example/';
+const IMAGES_PATH_UPLOAD = __dirname + '/../public/'
 var fs = require('fs');
 var Canvas = require('canvas'),
     Image = Canvas.Image;
@@ -30,7 +31,20 @@ module.exports = {
   },
   returnResult: function(){
     return results;
-  }
+  },
+  getOneResult: async (path) => {
+      let data_
+      fs.readFile(IMAGES_PATH_UPLOAD+path, function(err, data) {
+         data_ = data
+      });
+      let model = await loadModel();
+      var img = new Image;
+      img.src = await data_;
+      var canvas = Canvas.createCanvas(img.width, img.height);
+      var context = canvas.getContext('2d');
+      context.drawImage(img, 0, 0, img.width, img.height);
+      return await predict(canvas, IMAGES_PATH_UPLOAD+path);
+  },
 }
 
 // load the trained model:

@@ -3,9 +3,14 @@ var router = express.Router();
 var ml_model = require('../ml/predict_number.js');
 var multer_job = require('../util/multer_upload');
 var image_url;
-router.get('/', function(req, res, next){
 
-  res.render('predict_upload_picture', { title: 'Sign Language Digits In Upload Picture', image_url: image_url});
+router.get('/', async (req, res, next) => {
+  if(image_url) {
+    result = await ml_model.getOneResult(image_url);
+    res.render('predict_upload_picture', { title: 'Sign Language Digits In Upload Picture', image_url: image_url, result:result});
+  } else {
+    res.render('predict_upload_picture', { title: 'Sign Language Digits In Upload Picture'});
+  }
 });
 
 router.post('/', function(req, res, next) {
