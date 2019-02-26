@@ -4,7 +4,7 @@
 # Logs
 logs
 *.log
-
+/public/static/
 # Runtime data
 pids
 *.pid
