@@ -7,7 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var predictNumber = require('./routes/predict_number');
-var predictNumberV= require('./routes/predict_number_video');
+var predictNumberUp= require('./routes/predict_upload_picture');
 
 var app = express();
 
@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/predict_number', predictNumber);
-app.use('/predict_number_video', predictNumberV);
+app.use('/predict_upload_picture', predictNumberUp);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
