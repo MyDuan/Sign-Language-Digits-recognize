@@ -25,6 +25,23 @@ jobs:
       - run:
           name: Start test
           command: npm test
+  build_python:
+    working_directory: ~/web_app/notebook
+    docker:
+      - image: circleci/python:3.6.6
+    steps:
+      - checkout
+      - restore_cache:
+          key: python3-dependencies-cache-{{ checksum "Pipfile.lock" }}
+      - run:
+          name: Install dependencies
+          command: |
+            sudo pip install pipenv
+            pipenv install --deploy
+      - save_cache:
+          key: python3-dependencies-cache-{{ checksum "Pipfile.lock" }}
+          paths:
+            - .venv
   deploy_if_on_master:
     machine: true
     working_directory: ~/web_app
@@ -45,13 +62,14 @@ workflows:
   build-deploy:
     jobs:
       - build_and_test
+      - build_python
       - deploy_if_on_master:
          requires:
             - build_and_test
          filters:
            branches:
             only: master
-            
+
 experimental:
   notify:
     branches:
