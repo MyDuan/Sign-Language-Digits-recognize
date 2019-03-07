@@ -25,6 +25,7 @@ jobs:
       - run:
           name: Start test
           command: npm test
+          
   deploy_if_on_master:
     machine: true
     working_directory: ~/web_app
@@ -51,7 +52,7 @@ workflows:
          filters:
            branches:
             only: master
-            
+
 experimental:
   notify:
     branches:

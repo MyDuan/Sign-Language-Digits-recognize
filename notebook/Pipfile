@@ -1,0 +1,24 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+matplotlib = "*"
+sympy = "*"
+numpy = "*"
+pandas = "*"
+jupyter = "*"
+jupyterlab = "*"
+"boto3" = "*"
+"bokeh" = "*"
+sagemaker = "*"
+pyfunctional = "*"
+sklearn = "*"
+slackclient = "*"
+tqdm = "*"
+tensorflow = "*"
+[dev-packages]
+
+[requires]
+python_version = "3.6"
