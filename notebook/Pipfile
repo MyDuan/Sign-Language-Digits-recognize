@@ -18,6 +18,7 @@ sklearn = "*"
 slackclient = "*"
 tqdm = "*"
 tensorflow = "*"
+tensorflowjs = "*"
 [dev-packages]
 
 [requires]
