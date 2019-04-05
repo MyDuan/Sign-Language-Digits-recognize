@@ -6,8 +6,9 @@ A sample web app create in Express framework
 - And this app is deploied in a Conoha VPS server. And can access in url: http://118.27.14.11/
 - In website, there is a method of Sign Language Digits recognize. -> [reference](https://qiita.com/PonDad/items/14d1d1c0e6e80a43e0b7)
   - Use python Tensorflow.keras to train a deep CNN model (VGG16)
-    - Also build a simple python notebook experimental environment
-  - Use Tensorflow.js toread the model, and use it to recognize the pictures which have "Sign Language Digits"
+    - Also build a simple python notebook experimental environment in floder [notebook](https://github.com/MyDuan/web_app/tree/master/notebook)
+    - The training notebook file and some data prepare `.py` also in this floder.
+  - Use Tensorflow.js to read the model, and use it to recognize the pictures which have "Sign Language Digits"
 
 ## local development
 ### Normal
