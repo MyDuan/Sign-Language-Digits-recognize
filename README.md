@@ -2,7 +2,7 @@
 A sample web app create in Express framework
 
 ## Abstract
-- Create a sample web-app by using Node.js Express framwork. 
+- Create a sample web-app by using Node.js [Express](https://expressjs.com/) framwork. 
 - And this app is deploied in a Conoha VPS server. And can access in url: http://118.27.14.11/
 - In website, there is a method of Sign Language Digits recognize. -> [reference](https://qiita.com/PonDad/items/14d1d1c0e6e80a43e0b7)
   - Use python Tensorflow.keras to train a deep CNN model (VGG16)
