@@ -1,5 +1,5 @@
 # web_app
-A sample web app create in Express framework to do a sample picture image recognition.
+A sample web app created by using Node.js Express framework to do a sample image recognition.
 
 ## Abstract
 - Create a sample web-app by using Node.js [Express](https://expressjs.com/) framwork. 
