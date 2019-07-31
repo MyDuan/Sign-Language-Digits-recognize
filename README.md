@@ -1,5 +1,5 @@
 # web_app
-A sample web app create in Express framework to do a sample picture image recognition.
+A sample web app created by using Node.js Express framework to do a sample images recognition.
 
 ## Abstract
 - Create a sample web-app by using Node.js [Express](https://expressjs.com/) framwork. 
@@ -21,20 +21,20 @@ A sample web app create in Express framework to do a sample picture image recogn
       - And also I use EntryKit to render different .conf file in order to different environment.
   - Step to use
      - Install the docker (I use docker for mac)
-     - export COMPOSE_FILE=docker-compose.nginx_test.yml (That means you docker-compose will use "docker-compose.nginx_test.yml"
+     - Export COMPOSE_FILE=docker-compose.nginx_test.yml (That means you docker-compose will use "docker-compose.nginx_test.yml"
 you can set it according to yourself.)
-     - docker-compose up
-     - https://localhost
-     - note: when use the COMPOSE_FILE=docker-compose.without_nginx.yml, the url will be http://localhost:8080/
-     - networks and hard coding IP was used.
+     - Use `docker-compose up`
+     - URL: https://localhost
+     - Note: when use the COMPOSE_FILE=docker-compose.without_nginx.yml, the url will be http://localhost:8080/
+     - Networks and hard coding IP was used.
 
 ## Deploy to VPS server
 ### Setting the VPS server
   - [reference](https://qiita.com/ongaeshi/items/bb17ebfbd4d22057c8fd)
-### circleci
+### Circleci
 
   - [config file](https://github.com/MyDuan/web_app/blob/master/.circleci/config.yml)
-  - install Jtest `npm install --save-dev jest` and add a sample test in `/test`.
+  - Install Jtest `npm install --save-dev jest` and add a sample test in `/test`.
       - run `npm test`
-  - use [pm2](https://qiita.com/sakkuntyo/items/4ddabbb356254d863aae) to deploy
+  - Use [pm2](https://qiita.com/sakkuntyo/items/4ddabbb356254d863aae) to deploy
   - Send the noti to slack.
