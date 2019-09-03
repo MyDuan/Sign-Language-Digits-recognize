@@ -9,7 +9,7 @@
        "user" : "deploy",
        "host" : [
            {
-             host:"52.194.193.158",
+             host: process.env.SSH_HOST,
              port: "4022"
            }
          ],
@@ -28,7 +28,7 @@
        "user" : "deploy",
        "host" : [
            {
-             host:"52.194.193.158",
+             host: process.env.SSH_HOST,
              port: "4022"
            }
          ],
