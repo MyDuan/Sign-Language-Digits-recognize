@@ -24,8 +24,8 @@ A sample web app created by using Node.js Express framework to do a sample image
      - Or run `docker-compose -f docker-compose.without_nginx.yml up`
          - URL: http://localhost:8080/
 
-## Deploy to aws server
-- http://3.112.152.77/
+## Deploy to aws server (Terminated)
+- ~~http://3.112.152.77/
 ### Circleci
 
   - [config file](https://github.com/MyDuan/web_app/blob/master/.circleci/config.yml)
