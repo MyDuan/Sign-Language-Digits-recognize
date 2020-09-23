@@ -25,7 +25,7 @@ A sample web app created by using Node.js Express framework to do a sample image
          - URL: http://localhost:8080/
 
 ## Deploy to aws server (Terminated)
-- ~~http://3.112.152.77/
+- ~~http://3.112.152.77/~~
 ### Circleci
 
   - [config file](https://github.com/MyDuan/web_app/blob/master/.circleci/config.yml)
